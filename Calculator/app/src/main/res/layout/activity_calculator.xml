@@ -15,7 +15,7 @@
         tools:layout_editor_absoluteY="255dp" />
 
     <Button
-        android:id="@+id/buttondivide"
+        android:id="@+id/buttonDivide"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:text="/"
@@ -39,7 +39,7 @@
         tools:layout_editor_absoluteY="415dp" />
 
     <Button
-        android:id="@+id/buttonmultiply"
+        android:id="@+id/buttonMultiply"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:text="*"
@@ -47,7 +47,7 @@
         tools:layout_editor_absoluteY="335dp" />
 
     <Button
-        android:id="@+id/buttonminus"
+        android:id="@+id/buttonMinus"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:text="-"
@@ -55,7 +55,7 @@
         tools:layout_editor_absoluteY="255dp" />
 
     <Button
-        android:id="@+id/buttonequal"
+        android:id="@+id/buttonEqual"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:text="="
@@ -103,7 +103,7 @@
         tools:layout_editor_absoluteY="255dp" />
 
     <Button
-        android:id="@+id/buttonplus"
+        android:id="@+id/buttonPlus"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:text="+"
