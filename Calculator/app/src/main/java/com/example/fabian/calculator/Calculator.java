@@ -1,12 +1,18 @@
 package com.example.fabian.calculator;
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class Calculator extends Activity implements View.OnClickListener {
+
+    ArrayList<Button> numberButtons;
+
+    TextView numberView;
     Button button1;
     Button button2;
     Button button3;
@@ -29,7 +35,8 @@ public class Calculator extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
 
-        button1 = button2(Button) findViewById(R.id.button1);
+        numberView = (TextView) findViewById(R.id.numberView);
+        button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
         button3 = (Button) findViewById(R.id.button3);
         button4 = (Button) findViewById(R.id.button4);
@@ -50,20 +57,39 @@ public class Calculator extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-
+        Button clickedButton = (Button) v;
+        switch (clickedButton.getId()) {
+            case R.id.buttonPlus:
+                break;
+            case R.id.buttonMinus:
+                break;
+            case R.id.buttonMultiply:
+                break;
+            case R.id.buttonDivide:
+                break;
+            case R.id.buttonC:
+                break;
+            case R.id.buttonEqual:
+                break;
+            default:
+                String recentNumber​ = numberView.getText().toString();
+                if (recentNumber​.equals("0")) {
+                    recentNumber​ = "";
+                }
+                recentNumber​ += clickedButton.getText().toString();
+                numberView.setText(recentNumber​);
+        }
+        System.out.println("Current text: " + numberView.getText());
     }
 
-    public void setUpNumberButtonListener​()​ {
+    public void setNumberButtonListener() {
         for (int i = 0; i <= 9; i++) {
-            
+            String buttonName = "button" + i;
+            int id = getResources().getIdentifier(buttonName, "id", R.class.getPackage().getName());
+            Button button = (Button) findViewById(id);
+            button.setOnClickListener(this);
+
+            numberButtons.add(button);
         }
-                ​ int​ i ​ = ​ ​ 0 ​ ; ​ i ​ <=​ ​ 9 ​ ; ​ i​ ++)​ {
-            String​ buttonName ​ = ​ ​ "button"​ ​ + ​ i;
-            int​ id ​ = ​ getResources​ ().​ getIdentifier​ ( ​ buttonName​ , ​ ​ "id"​ ,
-                    R​ . ​ class​ . ​ getPackage​ ().​ getName​ ());
-            Button​ button ​ = ​ ​ ( ​ Button​ ) ​ findViewById​ ( ​ id​ );
-            button​ . ​ setOnClickListener​ ( ​ this​ );
-        }
-        numberButtons​ . ​ add​ ( ​ button​ );
     }
 }
