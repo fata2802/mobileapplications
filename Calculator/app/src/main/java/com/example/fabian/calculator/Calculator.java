@@ -25,7 +25,7 @@ public class Calculator extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
 
-        setNumberButtonListener();
+        setButtonListener();
 
         numberView = (TextView) findViewById(R.id.numberView);
     }
@@ -69,7 +69,7 @@ public class Calculator extends Activity implements View.OnClickListener {
         System.out.println("Current text: " + numberView.getText());
     }
 
-    public void setNumberButtonListener() {
+    public void setButtonListener() {
         Button button;
         for (int i = 0; i <= 9; i++) {
             String buttonName = "button" + i;
